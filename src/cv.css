@@ -1,0 +1,322 @@
+@media screen,
+print {
+
+    ::selection {
+        background-color: rgb(0, 237, 255);
+        color: #000;
+        text-shadow: 2px 2px 5px rgb(105, 0, 255);
+    }
+
+    #cv-page {
+        width: 50%;
+        min-width: 450px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 90%;
+        color: #fff;
+        padding: 0 2em;
+    }
+
+    ol,
+    ul {
+        margin-top: 0;
+    }
+
+    #name {
+        margin-bottom: 0;
+    }
+
+    .portrait {
+        height: 200px;
+        position: absolute;
+        left: 35ch;
+        top: -3em;
+        margin-right: 10px;
+    }
+
+    .portrait img {
+        height: 100%;
+        width: auto;
+        border-radius: 50%;
+    }
+
+    p {
+        text-align: justify;
+        word-wrap: break-word;
+    }
+
+    .auto-divided-grid {
+        position: relative;
+    }
+
+    .no-bullet {
+        list-style: none;
+    }
+
+    .no-indent {
+        padding-left: 0;
+    }
+
+    .colon-before-second td:nth-child(2)::before {
+        content: ":";
+        margin-right: 1ch;
+    }
+
+    .half-grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        gap: 1em;
+    }
+
+    .grid-40-60 {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto;
+        gap: 1em;
+    }
+
+    #experiences p,
+    #projects p {
+        margin: 0;
+    }
+
+    .button {
+        padding: .2em 1.5em;
+        background: lightblue;
+        color: #000;
+        border-radius: .3em;
+        cursor: pointer;
+        transition: background .1s linear, color .1s linear;
+    }
+
+    .button span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .button .icon {
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        object-fit: contain;
+        margin: 0;
+        margin-right: .5ch;
+        vertical-align: middle;
+    }
+
+    .icon path {
+        transition: color .1s linear;
+    }
+
+    .button:hover .icon {
+        color: #fff;
+    }
+
+    .button:hover {
+        color: #fff;
+        background: rgb(148, 214, 62);
+    }
+
+    .li-headings li {
+        font-weight: bold;
+    }
+
+    .li-headings li p {
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+
+    .project {
+        margin-bottom: 1em;
+    }
+
+    .li-headings li .source {
+        font-weight: normal;
+        margin: 0;
+    }
+
+    #computer-skills {
+        text-align: justify;
+        padding: 0;
+    }
+
+    ol li::before {
+        content: counters(item, ".") ". ";
+        counter-increment: item
+    }
+
+    ol {
+        list-style-type: none;
+        counter-reset: item;
+    }
+
+    .computer-skill::before {
+        content: '•';
+        margin-right: 1ch;
+    }
+
+    .computer-skill {
+        display: inline-block;
+        white-space: nowrap;
+    }
+}
+
+@media screen {
+    #print-button {
+        display: block;
+        position: fixed;
+        font-weight: bold;
+        right: 1em;
+        top: 10px;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    #dont-print,
+    #dont-print * {
+        z-index: 2;
+    }
+
+    #back-button {
+        display: block;
+        display: none;
+        position: fixed;
+        left: 50%;
+        transform: translateX(calc(-120mm - 100%));
+        top: 10px;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    a {
+        color: #fff;
+    }
+
+    a:visited {
+        color: #fff;
+    }
+
+    .portrait::before,
+    .portrait::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 110%;
+        height: 110%;
+        z-index: -1;
+        border-radius: 50%;
+    }
+
+    .portrait::before {
+        background-color: rgb(105, 0, 255);
+        clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+        animation: clipRotate2 15s linear infinite;
+    }
+
+    .portrait::after {
+        background-color: rgb(0, 237, 255);
+        clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+        animation: clipRotate 15s linear infinite;
+    }
+
+    @keyframes clipRotate {
+
+        0%,
+        100% {
+            clip-path: inset(0 50% 50% 0);
+        }
+
+        25% {
+            clip-path: inset(0 0 50% 50%);
+        }
+
+        50% {
+            clip-path: inset(50% 0 0 50%);
+        }
+
+        75% {
+            clip-path: inset(50% 50% 0 0);
+        }
+
+    }
+
+    @keyframes clipRotate2 {
+
+        0%,
+        100% {
+            clip-path: inset(50% 0 0 50%);
+        }
+
+        25% {
+            clip-path: inset(50% 50% 0 0);
+        }
+
+        50% {
+            clip-path: inset(0 50% 50% 0);
+        }
+
+        75% {
+            clip-path: inset(0 0 50% 50%);
+        }
+    }
+}
+
+@media screen and (max-width: 1919px) {
+    #print-button {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .half-grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        text-align: justify;
+    }
+
+    .grid-40-60 {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        text-align: justify;
+    }
+
+    .portrait {
+        position: relative;
+        display: inline-block;
+        top: unset;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media print {
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    #dont-print {
+        display: none;
+    }
+
+    #screen {
+        display: block;
+        overflow: visible;
+    }
+
+    .project {
+        page-break-inside: avoid;
+    }
+}

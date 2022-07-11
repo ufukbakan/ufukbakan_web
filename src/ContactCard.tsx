@@ -3,11 +3,18 @@ import githubIcon from "./assets/icons8-github.json";
 import twitterIcon from "./assets/icons8-twitter.json";
 import linkedinIcon from "./assets/icons8-linkedin-2.json";
 import gmailIcon from "./assets/icons8-gmail-logo.json";
+import playIcon from "./assets/icons8-play-48.png";
+import stopIcon from "./assets/icons8-stop-48.png";
 import { useEffect, useState } from "react";
 
-export default function () {
+interface ContactCardProps{
+    bgState: Array<any>
+}
+
+export default function (props: ContactCardProps) {
 
     const [animatedLogo, setAnimatedLogo] = useState(-1);
+    const [staticBg, setStaticBg] = props.bgState;
 
     useEffect(() => {
         console.log(animatedLogo);
@@ -55,6 +62,9 @@ export default function () {
                 <div className="name-title">
                     <div className="name">Ufuk Bakan</div>
                     <div className="title">Fullstack Developer</div>
+                </div>
+                <div className="play-background-animation-button" onClick={ ()=> setStaticBg(!staticBg) }>
+                    <img src={staticBg ? playIcon : stopIcon}></img>
                 </div>
             </div>
         </>

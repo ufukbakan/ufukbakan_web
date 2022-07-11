@@ -1,13 +1,16 @@
 import classNames from "classnames";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useContext } from "react";
+import { BookContext } from "./App";
 
 export default function Book(props: BookProps) {
+
+    const bookContext = useContext(BookContext);
 
     return (
         <div className={
             classNames("book", { "active": props.active, "prevent-click": props.preventClick })
-            }
-            onClick={props.onClick}
+        }
+            onClick={props.active ? undefined : props.onClick}
             style={
                 {
                     left: (props.id * 12) - 10 + "em",
@@ -25,6 +28,9 @@ export default function Book(props: BookProps) {
             <div className="face face-top"></div>
             <div className="face face-bottom"></div>
             <div className="face face-front">
+                <div className="book-close-button" onClick={(e) => {
+                    bookContext?.setActiveBook(-1);
+                }}>&times;</div>
                 <div className="content">
                     {props.children}
                 </div>

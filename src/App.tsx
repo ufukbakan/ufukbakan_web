@@ -1,23 +1,37 @@
-import { MouseEvent, useEffect, useState } from 'react'
+import { createContext, MouseEvent, useEffect, useState } from 'react'
 import Book from './Book';
 import CV from './CV';
 import Summary from './Summary';
 import backgroundVideo from "./assets/videoplayback.mp4";
+import ContactCard from './ContactCard';
+import './index.css'
+
+interface BookContextType{
+  activeBook: number,
+  setActiveBook: Function
+}
+
+export const BookContext = createContext<BookContextType | undefined>(undefined);
 
 function App() {
 
   const [activeBook, setActiveBook] = useState<number>(-1);
 
-  function bookClicked(id: number) {
+  const bookClicked = (id: number) => {
     setActiveBook(id);
   }
 
-  function removeActiveBook(e: MouseEvent) {
+  const removeActiveBook = (e: MouseEvent) => {
+    console.log("removing...");
     setActiveBook(-1);
   }
 
+  useEffect(() => {
+    console.log(activeBook);
+  })
+
   return (
-    <>
+    <BookContext.Provider value={ {activeBook, setActiveBook } }>
       <video className='background-video' src={backgroundVideo} muted={true} autoPlay={true} loop={true}></video>
       <div className='books'>
         <div className="wrapper-background" onClick={removeActiveBook}></div>
@@ -30,8 +44,9 @@ function App() {
             <CV></CV>
           </div>
         </Book>
+        <ContactCard></ContactCard>
       </div>
-    </>
+    </BookContext.Provider>
   )
 }
 

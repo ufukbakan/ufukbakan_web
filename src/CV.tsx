@@ -24,22 +24,24 @@ export default function CV() {
                         </div>
                         <h3>Personal Information</h3>
                         <table className="colon-before-second">
-                            <tr>
-                                <td>Birthdate</td>
-                                <td>28.02.2000</td>
-                            </tr>
-                            <tr>
-                                <td>Driving License</td>
-                                <td>B</td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td>Male</td>
-                            </tr>
-                            <tr>
-                                <td>Military Services</td>
-                                <td>Postponed until 31.12.2028</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>Birthdate</td>
+                                    <td>28.02.2000</td>
+                                </tr>
+                                <tr>
+                                    <td>Driving License</td>
+                                    <td>B</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>Military Services</td>
+                                    <td>Postponed until 31.12.2028</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -129,88 +131,88 @@ export default function CV() {
                 <ol className="li-headings" id="projects">
                     <li>Open Source Projects
                         <ol>
-                            <br/>
-                                <div className="project">
-                                    <li>WebGL Tower Defense Game</li>
-                                    <p>
-                                        A tower defense game developed with node.js and Three.js.
-                                    </p>
-                                    <div className="source"><a href="https://github.com/ufukbakan/WebGL-TowerDefense">https://github.com/ufukbakan/WebGL-TowerDefense</a></div>
-                                </div>
+                            <br />
+                            <div className="project">
+                                <li>WebGL Tower Defense Game</li>
+                                <p>
+                                    A tower defense game developed with node.js and Three.js.
+                                </p>
+                                <div className="source"><a href="https://github.com/ufukbakan/WebGL-TowerDefense">https://github.com/ufukbakan/WebGL-TowerDefense</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>Wolf Sheep Rabbit Game</li>
-                                    <p>It's an online game which is similar to rock paper scissors. Node.js, Postgresql, React and
-                                        Docker were used to develop this game project.</p>
-                                    <div className="source"><a href="https://github.com/ufukbakan/wolf_sheep_rabbit">https://github.com/ufukbakan/wolf_sheep_rabbit</a></div>
-                                </div>
+                            <div className="project">
+                                <li>Wolf Sheep Rabbit Game</li>
+                                <p>It's an online game which is similar to rock paper scissors. Node.js, Postgresql, React and
+                                    Docker were used to develop this game project.</p>
+                                <div className="source"><a href="https://github.com/ufukbakan/wolf_sheep_rabbit">https://github.com/ufukbakan/wolf_sheep_rabbit</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>Reliable Studio Code</li>
-                                    <p>The application is developed with Electron and React. It allows developers to encode and
-                                        decode
-                                        source code files, generates a secret key from a passphrase and remembers the last one.
-                                    </p>
-                                    <div className="source"><a href="https://github.com/ufukbakan/Reliable-Studio-Code">https://github.com/ufukbakan/Reliable-Studio-Code</a></div>
-                                </div>
+                            <div className="project">
+                                <li>Reliable Studio Code</li>
+                                <p>The application is developed with Electron and React. It allows developers to encode and
+                                    decode
+                                    source code files, generates a secret key from a passphrase and remembers the last one.
+                                </p>
+                                <div className="source"><a href="https://github.com/ufukbakan/Reliable-Studio-Code">https://github.com/ufukbakan/Reliable-Studio-Code</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>Gender Recognition by Voice</li>
-                                    <p>This application guesses your gender by your voice, allows recordings and file uploads. GUI
-                                        was
-                                        written in C# and AI was written in Python.
-                                    </p>
-                                    <div className="source"><a href="https://github.com/ufukbakan/GenderRecognitionByVoice">https://github.com/ufukbakan/GenderRecognitionByVoice</a></div>
-                                </div>
+                            <div className="project">
+                                <li>Gender Recognition by Voice</li>
+                                <p>This application guesses your gender by your voice, allows recordings and file uploads. GUI
+                                    was
+                                    written in C# and AI was written in Python.
+                                </p>
+                                <div className="source"><a href="https://github.com/ufukbakan/GenderRecognitionByVoice">https://github.com/ufukbakan/GenderRecognitionByVoice</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>Precision-timeout-interval</li>
-                                    <p>This project is a javascript package which is published on npm. It fixes unreliable javascript timers.</p>
-                                    <div className="source"><a href="https://www.npmjs.com/package/precision-timeout-interval">https://www.npmjs.com/package/precision-timeout-interval</a></div>
-                                </div>
+                            <div className="project">
+                                <li>Precision-timeout-interval</li>
+                                <p>This project is a javascript package which is published on npm. It fixes unreliable javascript timers.</p>
+                                <div className="source"><a href="https://www.npmjs.com/package/precision-timeout-interval">https://www.npmjs.com/package/precision-timeout-interval</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>Hospital Finder</li>
-                                    <p>It's a QGIS plugin that's written in Python. This plugin allows users to find the most
-                                        suitable
-                                        hospital by their filters in Ankara.</p>
-                                    <div className="source"><a href="https://github.com/ufukbakan/QGIS-HospitalFinder">https://github.com/ufukbakan/QGIS-HospitalFinder</a></div>
-                                </div>
+                            <div className="project">
+                                <li>Hospital Finder</li>
+                                <p>It's a QGIS plugin that's written in Python. This plugin allows users to find the most
+                                    suitable
+                                    hospital by their filters in Ankara.</p>
+                                <div className="source"><a href="https://github.com/ufukbakan/QGIS-HospitalFinder">https://github.com/ufukbakan/QGIS-HospitalFinder</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>Blitz Auto Killer</li>
-                                    <p>A scheduler project to automatically kill specific processes while gaming.</p>
-                                    <div className="source"><a href="https://ufukbakan.github.io/BlitzAutoKiller/">https://ufukbakan.github.io/BlitzAutoKiller/</a></div>
+                            <div className="project">
+                                <li>Blitz Auto Killer</li>
+                                <p>A scheduler project to automatically kill specific processes while gaming.</p>
+                                <div className="source"><a href="https://ufukbakan.github.io/BlitzAutoKiller/">https://ufukbakan.github.io/BlitzAutoKiller/</a></div>
 
-                                </div>
+                            </div>
 
-                                <div className="project">
-                                    <li>KMS Simulation</li>
-                                    <p>It's a containerized node.js project that simulates key management services.</p>
-                                    <div className="source"><a href="https://github.com/ufukbakan/KMS-Sim">https://github.com/ufukbakan/KMS-Sim</a></div>
-                                </div>
+                            <div className="project">
+                                <li>KMS Simulation</li>
+                                <p>It's a containerized node.js project that simulates key management services.</p>
+                                <div className="source"><a href="https://github.com/ufukbakan/KMS-Sim">https://github.com/ufukbakan/KMS-Sim</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>U Type Pass</li>
-                                    <p>Encyription tool which uses three different asymetric keys created by me. Written in C#.</p>
-                                    <div className="source"><a href="https://github.com/ufukbakan/UTypePass">https://github.com/ufukbakan/UTypePass</a></div>
-                                </div>
+                            <div className="project">
+                                <li>U Type Pass</li>
+                                <p>Encyription tool which uses three different asymetric keys created by me. Written in C#.</p>
+                                <div className="source"><a href="https://github.com/ufukbakan/UTypePass">https://github.com/ufukbakan/UTypePass</a></div>
+                            </div>
 
-                                <div className="project">
-                                    <li>Windows Vista with CSS</li>
-                                    <p>An uncomplete project, front-end copy of windows vista written with HTML, CSS and Js. It's
-                                        open
-                                        source on my codepen (<a target="_blank"
-                                            href="https://codepen.io/ufukbakan/pen/KKNxZjJ">codepen.io/ufukbakan/pen/KKNxZjJ</a>).
-                                    </p>
-                                </div>
+                            <div className="project">
+                                <li>Windows Vista with CSS</li>
+                                <p>An uncomplete project, front-end copy of windows vista written with HTML, CSS and Js. It's
+                                    open
+                                    source on my codepen (<a target="_blank"
+                                        href="https://codepen.io/ufukbakan/pen/KKNxZjJ">codepen.io/ufukbakan/pen/KKNxZjJ</a>).
+                                </p>
+                            </div>
 
-                                <div className="project">
-                                    <li>Web Page Creator</li>
-                                    <p>Project done with C Programming Language. This console program allows user to set
-                                        title, paragraphs and color scheme. When all done, web page converted into HTML file
-                                        and saved on to desktop.</p>
-                                </div>
+                            <div className="project">
+                                <li>Web Page Creator</li>
+                                <p>Project done with C Programming Language. This console program allows user to set
+                                    title, paragraphs and color scheme. When all done, web page converted into HTML file
+                                    and saved on to desktop.</p>
+                            </div>
                         </ol>
 
                     </li>

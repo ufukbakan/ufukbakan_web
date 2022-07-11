@@ -210,6 +210,74 @@ code {
   transform: translateZ(-200px);
 }
 
+.book-close-button{
+  font-size: 4em;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: .5;
+  z-index: 3;
+  cursor: pointer;
+  display: table;
+}
+.book-close-button:hover{
+  opacity: 1;
+}
+
+.card{
+  position: absolute;
+  left: 58%;
+  top: 5em;
+  width: 250px;
+  height: 150px;
+  color: #000;
+  background-color: rgba(255,255,255, 1);
+  box-sizing: border-box;
+  padding: 1em;
+  border-radius: 10px;
+  opacity: .5;
+  transition: opacity .4s;
+}
+
+.card:hover{
+  opacity: 1;
+}
+
+.card .logo-link{
+  width: 50%;
+  height: 50%;
+  display: inline-flex;
+  filter: saturate(0);
+  transition: filter .2s;
+  cursor: pointer;
+}
+
+.card .logo-link:hover{
+  filter: saturate(1);
+}
+
+@font-face {
+  font-family: Sallymoores;
+  src: url("Sallymoores\ Free.ttf");
+}
+
+.card .name-title{
+  position: absolute;
+  bottom: -1em;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 200%;
+  color: #fff;
+  opacity: 1;
+  font-family: Sallymoores;
+  font-size: 10em;
+}
+.name-title .title{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: .1em;
+}
+
 @keyframes rotateAY {
   0% {
     transform: scale(0.8) rotateY(0deg);

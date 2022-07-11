@@ -1,4 +1,4 @@
-import portrait from "./assets/portrait.jpeg"
+import portrait from "./assets/pp.png"
 import "./cv.css"
 
 export default function CV() {
@@ -38,7 +38,7 @@ export default function CV() {
                             </tr>
                             <tr>
                                 <td>Military Services</td>
-                                <td>Postponed until 31.12.2025</td>
+                                <td>Postponed until 31.12.2028</td>
                             </tr>
                         </table>
                     </div>

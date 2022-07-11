@@ -15,16 +15,16 @@ export default function Book(props: BookProps) {
                 }
             }
         >
-            <div className="face-back"></div>
-            <div className="face-left">
+            <div className="face face-back"></div>
+            <div className="face face-left">
                 <span className="tag">
                     {props.tag}
                 </span>
             </div>
-            <div className="face-right"></div>
-            <div className="face-top"></div>
-            <div className="face-bottom"></div>
-            <div className="face-front">
+            <div className="face face-right"></div>
+            <div className="face face-top"></div>
+            <div className="face face-bottom"></div>
+            <div className="face face-front">
                 <div className="content">
                     {props.children}
                 </div>

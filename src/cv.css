@@ -2,9 +2,8 @@
 print {
 
     ::selection {
-        background-color: rgb(0, 237, 255);
-        color: #000;
-        text-shadow: 2px 2px 5px rgb(105, 0, 255);
+        background-color: rgb(0, 0, 0);
+        color: rgb(0, 255, 0);
     }
 
     #cv-page {
@@ -30,16 +29,19 @@ print {
     }
 
     .portrait {
-        height: 200px;
+        height: 160px;
+        width: 160px;
         position: absolute;
-        left: 35ch;
-        top: -3em;
+        right: 2em;
+        bottom: 2.2em;
         margin-right: 10px;
     }
 
     .portrait img {
         height: 100%;
-        width: auto;
+        width: 100%;
+        object-fit: cover;
+        object-position: right top;
         border-radius: 50%;
     }
 
@@ -215,13 +217,13 @@ print {
     }
 
     .portrait::before {
-        background-color: rgb(105, 0, 255);
+        background-color: rgb(221, 221, 221);
         clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
         animation: clipRotate2 15s linear infinite;
     }
 
     .portrait::after {
-        background-color: rgb(0, 237, 255);
+        background-color: rgb(0, 255, 42);
         clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
         animation: clipRotate 15s linear infinite;
     }
@@ -291,7 +293,7 @@ print {
     .portrait {
         position: relative;
         display: inline-block;
-        top: unset;
+        bottom: unset;
         left: 50%;
         transform: translateX(-50%);
     }

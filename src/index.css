@@ -258,7 +258,7 @@ code {
 
 @font-face {
   font-family: Sallymoores;
-  src: url("Sallymoores\ Free.ttf");
+  src: url("/Sallymoores\ Free.ttf");
 }
 
 .card .name-title{

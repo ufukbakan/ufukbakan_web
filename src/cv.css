@@ -158,12 +158,13 @@ print {
 
     .computer-skill::before {
         content: '•';
-        margin-right: 1ch;
+        margin-right: .5ch;
     }
 
     .computer-skill {
         display: inline-block;
         white-space: nowrap;
+        margin-right: .5ch;
     }
 }
 

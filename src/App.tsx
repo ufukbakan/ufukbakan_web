@@ -15,10 +15,23 @@ interface BookContextType {
 
 export const BookContext = createContext<BookContextType | undefined>(undefined);
 
+const alignBackgroundVideo = ()=>{
+  document.querySelector(".background-video")?.setAttribute("style", 
+  "transform: translateY(-" + document.querySelector(".background-video")?.getBoundingClientRect().top + "px)"
+  );
+}
+
+window.addEventListener("load", alignBackgroundVideo);
+window.addEventListener("resize", alignBackgroundVideo);
+
 function App() {
 
   const [activeBook, setActiveBook] = useState<number>(-1);
   const [staticBg, setStaticBg] = useState<boolean>(true);
+
+  useEffect(() => {
+    alignBackgroundVideo();
+  }, []);
 
   const bookClicked = (id: number) => {
     setActiveBook(id);
@@ -30,7 +43,7 @@ function App() {
 
   const renderBg = () => {
     return <div className='background-video'>
-      <video src={staticBg ? undefined : backgroundVideo} className={ classNames({"no-display": staticBg}) } muted={true} autoPlay={true} loop={true}></video>
+      <video src={staticBg ? undefined : backgroundVideo} className={classNames({ "no-display": staticBg })} muted={true} autoPlay={true} loop={true}></video>
     </div>
   }
 

@@ -341,31 +341,42 @@ code {
 @media screen and (max-width: 1023px) {
 
   body{
-    /*overflow-y: auto;*/
+    overflow-y: auto;
   }
 
   .books {
+    left: 0;
     perspective-origin: center bottom;
   }
 
   .books .wrapper-background {
     position: fixed;
     left: 0;
-    top: 0;
+    top: -50%;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: -1;
-    transform: translateZ(-1000vh) scale(2) translate(0, -60%);
+    transform: unset;
+    transform: scale(2) translateZ(-1000vh);
   }
 
   .book {
     position: relative;
     top: 100px;
-    left: -20vh !important;
+    left: 50% !important;
     overflow: visible;
-    transform-origin: center top;
-    transform: scaleX(0.65) rotateY(90deg) rotateX(90deg) translateZ(-100px);
-    margin-bottom: -70vh;
+    transform-origin: left top;
+    transform: translateX(-50%) rotateY(90deg) rotateX(90deg) translateZ(-100px);
+    margin-bottom: -55vw;
+    min-width: unset;
+    height: 80vw;
+    z-index: 4;
+  }
+
+  .book .face-left{
+    opacity: 1;
+    background-color: rgb(25, 25, 25);
+    color: #fff;
   }
 
   #cv-page{
@@ -392,24 +403,37 @@ code {
     width: 80vh;
     top: 50%;
     right: 0;
-    transform: translateX(45%) scaleX(-1) scaleY(calc(1 / 0.65)) translateY(350%) rotateZ(90deg);
+    /* scaleY(calc(1 / 0.65)) */
+    transform: translateX(45%) scaleX(-1) translateY(400%) rotateZ(90deg);
     white-space: nowrap;
   }
 
   .book:not(.active):hover {
-    transform: scaleX(0.65) rotateY(90deg) rotateX(90deg) translateZ(-100px);
+    transform: translateX(-50%) rotateY(90deg) rotateX(90deg) translateZ(-100px);
+  }
+
+  .book.active{
+    height: 90vh;
+  }
+
+  .book.active .face-front{
+    opacity: 0.9;
+  }
+  .book .face-back::after{
+    opacity: 1;
   }
 
   .card {
     position: relative;
     left: 50%;
     top: 4em;
-    transform: translate(-50%, 0) translateZ(-100px);
+    transform: translate(-50%, 0) translateZ(-1px);
     opacity: 1;
     height: unset;
     width: 75%;
     text-align: center;
     transform-style: preserve-3d;
+    z-index: 1;
   }
   .logo-links{
     display: inline-block;
@@ -436,5 +460,20 @@ code {
     transform: unset;
     display: inline-flex;
     transform: translateZ(200px);
+  }
+}
+
+@media screen and (max-widtH: 700px) {
+  #cv-page{
+    font-size: 4vw;
+    min-width: unset;
+    width: 95%;
+    box-sizing: border-box;
+  }
+  *{
+    padding: .01em;
+  }
+  .full-height-auto-width{
+    padding: .1em;
   }
 }

@@ -3,7 +3,7 @@ import Book from './Book';
 import CV from './CV';
 import Summary from './Summary';
 import backgroundVideo from "./assets/videoplayback.mp4";
-import background from "./assets/static_bg.jpg";
+import "./assets/static_bg.jpg";
 import ContactCard from './ContactCard';
 import './index.css'
 
@@ -27,13 +27,15 @@ function App() {
     setActiveBook(-1);
   }
 
-  const renderBg = () => staticBg ? <img className='background-video' src={background} ></img> : <video className='background-video' src={backgroundVideo} muted={true} autoPlay={true} loop={true}></video>
+  const renderBg = () => staticBg ? <div className='background-video static'></div> : <video className='background-video' src={backgroundVideo} muted={true} autoPlay={true} loop={true}></video>
 
   return (
     <BookContext.Provider value={{ activeBook, setActiveBook }}>
-      { renderBg() }
+      <ContactCard bgState={[staticBg, setStaticBg]}></ContactCard>
       <div className='books'>
-        <div className="wrapper-background" onClick={removeActiveBook}></div>
+        <div className="wrapper-background" onClick={removeActiveBook}>
+          {renderBg()}
+        </div>
         <Book id={0} tag='Who Am I' preventClick={activeBook != -1 && activeBook != 0} active={activeBook == 0} onClick={bookClicked.bind(null, 0)}>
           <Summary></Summary>
         </Book>
@@ -43,7 +45,6 @@ function App() {
             <CV></CV>
           </div>
         </Book>
-        <ContactCard bgState={[staticBg, setStaticBg]}></ContactCard>
       </div>
     </BookContext.Provider>
   )

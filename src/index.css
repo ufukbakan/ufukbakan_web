@@ -13,6 +13,10 @@ body {
   overflow: hidden;
 }
 
+#root{
+  transform-style: preserve-3d;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -21,7 +25,7 @@ code {
 .books {
   transform-style: preserve-3d;
   perspective: 1000vh;
-  perspective-origin: 5% 50%;
+  perspective-origin: 0% 50%;
 }
 
 .books .wrapper-background {
@@ -30,7 +34,8 @@ code {
   top: 0;
   width: 100vw;
   height: 100vh;
-  /*transform: translateZ(-1000vh) scale(2) translate(22.5%, 15%);*/
+  z-index: -1;
+  transform: translateZ(-1000vh) scale(2) translate(25%, 25%);
 }
 
 .book {
@@ -199,8 +204,8 @@ code {
 }
 
 .background-video {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
@@ -208,6 +213,9 @@ code {
   object-position: right top;
   opacity: 0.85;
   transform: translateZ(-200px);
+}
+.background-video.static{
+  background-image: url("./assets/static_bg.jpg");
 }
 
 .book-close-button{
@@ -237,6 +245,8 @@ code {
   border-radius: 10px;
   opacity: .5;
   transition: opacity .4s;
+  z-index: 1;
+  transform: translateZ(-100px);
 }
 
 .card:hover{
@@ -283,7 +293,7 @@ code {
   bottom: -14em;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff;
+  background-image: radial-gradient(#fff, #999);
   border-radius: 50%;
   display: flex;
   justify-content: center;

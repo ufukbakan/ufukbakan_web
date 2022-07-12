@@ -6,9 +6,10 @@ import gmailIcon from "./assets/icons8-gmail-logo.json";
 import playIcon from "./assets/icons8-play-48.png";
 import stopIcon from "./assets/icons8-stop-48.png";
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 
 interface ContactCardProps{
-    bgState: Array<any>
+    bgState: Array<any>,
 }
 
 export default function (props: ContactCardProps) {
@@ -61,7 +62,7 @@ export default function (props: ContactCardProps) {
                 </span>
                 <div className="name-title">
                     <div className="name">Ufuk Bakan</div>
-                    <div className="title">Fullstack Developer</div>
+                    <div className="title">Developer</div>
                 </div>
                 <div className="play-background-animation-button" onClick={ ()=> setStaticBg(!staticBg) }>
                     <img src={staticBg ? playIcon : stopIcon}></img>

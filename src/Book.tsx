@@ -13,7 +13,7 @@ export default function Book(props: BookProps) {
             onClick={props.active ? undefined : props.onClick}
             style={
                 {
-                    left: (props.id * 12) - 10 + "em",
+                    left: (props.id * 11) - 10 + "vw",
                     animationDelay: props.id * -2.5 + "s"
                 }
             }

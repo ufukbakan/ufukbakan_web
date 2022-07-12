@@ -216,7 +216,9 @@ code {
   position: fixed;
   left: 0;
   top: 0;
-  transform: translateZ(-200px);
+  transform: translateZ(-1000vh);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .background-video video {
@@ -257,7 +259,7 @@ code {
   opacity: .5;
   transition: opacity .4s;
   z-index: 1;
-  transform: translateZ(-100px);
+  transform: translateZ(1px);
 }
 
 .card:hover {
@@ -347,6 +349,7 @@ code {
   .books {
     left: 0;
     perspective-origin: center bottom;
+    min-height: 80vh;
   }
 
   .books .wrapper-background {

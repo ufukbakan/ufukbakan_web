@@ -1,12 +1,11 @@
+import { useState } from "react";
 import Lottie from "react-lottie";
 import githubIcon from "./assets/icons8-github.json";
-import twitterIcon from "./assets/icons8-twitter.json";
-import linkedinIcon from "./assets/icons8-linkedin-2.json";
 import gmailIcon from "./assets/icons8-gmail-logo.json";
+import linkedinIcon from "./assets/icons8-linkedin-2.json";
 import playIcon from "./assets/icons8-play-48.png";
 import stopIcon from "./assets/icons8-stop-48.png";
-import { useEffect, useState } from "react";
-import classNames from "classnames";
+import twitterIcon from "./assets/icons8-twitter.json";
 
 interface ContactCardProps {
     bgState: Array<any>,

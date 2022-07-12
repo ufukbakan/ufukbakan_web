@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { MouseEventHandler, useContext } from "react";
+import { MouseEventHandler, RefObject, useContext } from "react";
 import { BookContext } from "./App";
 
 export default function Book(props: BookProps) {

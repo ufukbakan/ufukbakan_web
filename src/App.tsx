@@ -33,15 +33,17 @@ window.addEventListener("scroll", scrollBackgroundVideo);
 window.addEventListener("load", () => {
   document.querySelectorAll(".book").forEach(book => book.addEventListener("click",
     () => {
-      prcTimeout(2500, () => {
-        let top = document.querySelector(".active .content")?.getBoundingClientRect().top;
-        if (top) {
-          window.scrollBy({
-            behavior: "smooth",
-            top: top
-          })
-        }
-      });
+      for (let i = 0; i < 3; i++) {
+        prcTimeout(i*850, () => {
+          let top = document.querySelector(".active .content")?.getBoundingClientRect().top;
+          if (top) {
+            window.scrollBy({
+              behavior: "smooth",
+              top: top
+            })
+          }
+        });
+      }
       // window.setTimeout(
       //   () => document.querySelector(".active .content")?.scrollIntoView({ behavior: "smooth" }),
       //   2500

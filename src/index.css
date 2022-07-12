@@ -438,6 +438,9 @@ code {
     transform-style: preserve-3d;
     z-index: 1;
   }
+  .card .logo-link{
+    width: 49%;
+  }
   .logo-links{
     display: inline-block;
     height: 100px;
@@ -451,8 +454,12 @@ code {
     top: unset;
     transform: unset;
     width: 100%;
+    box-sizing: border-box;
     color: #000;
-    margin-bottom: 1rem;
+  }
+  .name-title .name{
+    box-sizing: border-box;
+    padding-right: 1rem;
   }
   .card .play-background-animation-button{
     position: relative;

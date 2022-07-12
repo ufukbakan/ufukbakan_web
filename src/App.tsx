@@ -33,7 +33,7 @@ window.addEventListener("scroll", scrollBackgroundVideo);
 window.addEventListener("load", () => {
   document.querySelectorAll(".book").forEach(book => book.addEventListener("click",
     () => {
-      prcTimeout(2500, () => document.querySelector(".active .content")?.scrollIntoView({ behavior: "smooth" }));
+      prcTimeout(3000, () => document.querySelector(".active .content")?.scrollIntoView({ behavior: "smooth" }));
       // window.setTimeout(
       //   () => document.querySelector(".active .content")?.scrollIntoView({ behavior: "smooth" }),
       //   2500

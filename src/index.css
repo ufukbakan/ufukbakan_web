@@ -456,6 +456,7 @@ code {
     width: 100%;
     box-sizing: border-box;
     color: #000;
+    margin-bottom: 1rem;
   }
   .name-title .name{
     box-sizing: border-box;

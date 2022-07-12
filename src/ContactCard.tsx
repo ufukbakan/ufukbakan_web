@@ -61,8 +61,8 @@ export default function (props: ContactCardProps) {
                     <div className="name">Ufuk Bakan</div>
                     <div className="title">Developer</div>
                 </div>
-                <div className="play-background-animation-button" onClick={() => setStaticBg(!staticBg)}>
-                    <img src={staticBg ? playIcon : stopIcon}></img>
+                <div className="play-background-animation-button" onClick={() => setStaticBg( staticBg == undefined ? false : !staticBg )}>
+                    <img src={staticBg != false ? playIcon : stopIcon}></img>
                 </div>
             </div>
         </>

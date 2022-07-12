@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { prcTimeout } from 'precision-timeout-interval';
-import { createContext, MouseEvent, useState } from 'react';
+import { createContext, MouseEvent, useEffect, useRef, useState } from 'react';
 import "./assets/static_bg.jpg";
 import backgroundVideo from "./assets/videoplayback.mp4";
 import Book from './Book';
@@ -55,7 +55,8 @@ window.addEventListener("load", () => {
 function App() {
 
   const [activeBook, setActiveBook] = useState<number>(-1);
-  const [staticBg, setStaticBg] = useState<boolean>(true);
+  const [staticBg, setStaticBg] = useState<boolean | undefined>(undefined);
+  const bgVideoRef = useRef<HTMLVideoElement>(null);
 
   const bookClicked = (id: number) => {
     setActiveBook(id);
@@ -65,9 +66,18 @@ function App() {
     setActiveBook(-1);
   }
 
+  useEffect(()=>{
+    console.log(staticBg);
+    if(staticBg == false){
+      bgVideoRef.current?.play();
+    }else if(staticBg == true){
+      bgVideoRef.current?.pause();
+    }
+  }, [staticBg])
+
   const renderBg = () => {
     return <div className='background-video'>
-      <video src={staticBg ? undefined : backgroundVideo} className={classNames({ "no-display": staticBg })} muted={true} autoPlay={true} loop={true}></video>
+      <video ref={bgVideoRef} src={staticBg == undefined ? undefined : backgroundVideo} className={classNames({ "no-display": (staticBg == undefined) })} muted={true} autoPlay={true} loop={true}></video>
     </div>
   }
 

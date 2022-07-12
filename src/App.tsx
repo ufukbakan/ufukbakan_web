@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { prcTimeout } from 'precision-timeout-interval';
 import { createContext, MouseEvent, useState } from 'react';
 import "./assets/static_bg.jpg";
 import backgroundVideo from "./assets/videoplayback.mp4";
@@ -32,10 +33,11 @@ window.addEventListener("scroll", scrollBackgroundVideo);
 window.addEventListener("load", () => {
   document.querySelectorAll(".book").forEach(book => book.addEventListener("click",
     () => {
-      window.setTimeout(
-        () => document.querySelector(".active .content")?.scrollIntoView({ behavior: "smooth" }),
-        2500
-      )
+      prcTimeout(2500, () => document.querySelector(".active .content")?.scrollIntoView({ behavior: "smooth" }));
+      // window.setTimeout(
+      //   () => document.querySelector(".active .content")?.scrollIntoView({ behavior: "smooth" }),
+      //   2500
+      // )
     }
   ))
 });

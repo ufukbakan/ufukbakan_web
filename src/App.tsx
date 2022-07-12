@@ -6,6 +6,7 @@ import backgroundVideo from "./assets/videoplayback.mp4";
 import "./assets/static_bg.jpg";
 import ContactCard from './ContactCard';
 import './index.css'
+import classNames from 'classnames';
 
 interface BookContextType {
   activeBook: number,
@@ -27,7 +28,11 @@ function App() {
     setActiveBook(-1);
   }
 
-  const renderBg = () => staticBg ? <div className='background-video static'></div> : <video className='background-video' src={backgroundVideo} muted={true} autoPlay={true} loop={true}></video>
+  const renderBg = () => {
+    return <div className='background-video'>
+      <video src={staticBg ? undefined : backgroundVideo} className={ classNames({"no-display": staticBg}) } muted={true} autoPlay={true} loop={true}></video>
+    </div>
+  }
 
   return (
     <BookContext.Provider value={{ activeBook, setActiveBook }}>

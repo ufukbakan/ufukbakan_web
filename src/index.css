@@ -209,13 +209,19 @@ code {
   position: fixed;
   left: 0;
   top: 0;
-  object-fit: cover;
-  object-position: right top;
   opacity: 0.85;
   transform: translateZ(-200px);
-}
-.background-video.static{
   background-image: url("./assets/static_bg.jpg");
+  background-size: cover cover;
+  background-position: right top;
+}
+.background-video video{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: right top;
 }
 
 .book-close-button{
@@ -300,6 +306,10 @@ code {
   align-items: center;
   box-sizing: border-box;
   cursor: pointer;
+}
+
+.no-display{
+  display: none;
 }
 
 @keyframes rotateAY {

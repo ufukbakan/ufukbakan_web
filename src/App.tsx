@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
   document.querySelectorAll(".book").forEach(book => book.addEventListener("click",
     () => {
       for (let i = 0; i < 3; i++) {
-        prcTimeout(i*850, () => {
+        prcTimeout(i*1500, () => {
           let top = document.querySelector(".active .content")?.getBoundingClientRect().top;
           if (top) {
             window.scrollBy({

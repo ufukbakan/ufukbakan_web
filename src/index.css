@@ -11,9 +11,13 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  background-image: url("./assets/static_bg.jpg");
+  background-size: cover;
+  background-position: right top;
+  background-attachment: fixed;
 }
 
-#root{
+#root {
   transform-style: preserve-3d;
 }
 
@@ -29,7 +33,7 @@ code {
 }
 
 .books .wrapper-background {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
@@ -52,14 +56,15 @@ code {
   cursor: pointer;
 }
 
-.book > .face {
+.book>.face {
   position: absolute;
   transition: transform 4s;
   background-color: rgb(255, 255, 255);
   opacity: .05;
 }
 
-.book > .face-front, .book > .face-back{
+.book>.face-front,
+.book>.face-back {
   opacity: .7;
 }
 
@@ -81,11 +86,12 @@ code {
   z-index: 2;
 }
 
-.book:not(.active):hover > .face {
+.book:not(.active):hover>.face {
   opacity: .2;
 }
 
-.book:not(.active):hover > .face-front, .book:not(.active):hover > .face-back{
+.book:not(.active):hover>.face-front,
+.book:not(.active):hover>.face-back {
   opacity: .95;
 }
 
@@ -129,13 +135,13 @@ code {
   transform-style: preserve-3d;
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.05);
-  color: rgba(255,255,255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.book:not(.active):hover .face-left{
+.book:not(.active):hover .face-left {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.2);
-  color: rgba(255,255,255, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .book .face-right {
@@ -171,7 +177,8 @@ code {
 .book.active .face-front {
   transition-delay: 0;
 }
-.book.active .face-front:hover{
+
+.book.active .face-front:hover {
   opacity: .9;
 }
 
@@ -209,13 +216,10 @@ code {
   position: fixed;
   left: 0;
   top: 0;
-  opacity: 0.85;
   transform: translateZ(-200px);
-  background-image: url("./assets/static_bg.jpg");
-  background-size: cover cover;
-  background-position: right top;
 }
-.background-video video{
+
+.background-video video {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -224,7 +228,7 @@ code {
   object-position: right top;
 }
 
-.book-close-button{
+.book-close-button {
   font-size: 4em;
   position: absolute;
   top: 1rem;
@@ -234,18 +238,19 @@ code {
   cursor: pointer;
   display: table;
 }
-.book-close-button:hover{
+
+.book-close-button:hover {
   opacity: 1;
 }
 
-.card{
+.card {
   position: absolute;
   left: 58%;
   top: 5em;
   width: 250px;
   height: 150px;
   color: #000;
-  background-color: rgba(255,255,255, 1);
+  background-color: rgba(255, 255, 255, 1);
   box-sizing: border-box;
   padding: 1em;
   border-radius: 10px;
@@ -255,11 +260,11 @@ code {
   transform: translateZ(-100px);
 }
 
-.card:hover{
+.card:hover {
   opacity: 1;
 }
 
-.card .logo-link{
+.card .logo-link {
   width: 50%;
   height: 50%;
   display: inline-flex;
@@ -268,7 +273,7 @@ code {
   cursor: pointer;
 }
 
-.card .logo-link:hover{
+.card .logo-link:hover {
   filter: saturate(1);
 }
 
@@ -277,7 +282,7 @@ code {
   src: url("/Sallymoores\ Free.ttf");
 }
 
-.card .name-title{
+.card .name-title {
   position: absolute;
   bottom: -1em;
   left: 50%;
@@ -289,12 +294,13 @@ code {
   font-family: Sallymoores;
   font-size: 10em;
 }
-.name-title .title{
+
+.name-title .title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: .1em;
 }
 
-.card .play-background-animation-button{
+.card .play-background-animation-button {
   position: absolute;
   bottom: -14em;
   left: 50%;
@@ -308,7 +314,7 @@ code {
   cursor: pointer;
 }
 
-.no-display{
+.no-display {
   display: none;
 }
 
@@ -329,5 +335,106 @@ code {
 
   100% {
     transform: translateY(4%) rotateY(88deg);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+
+  body{
+    /*overflow-y: auto;*/
+  }
+
+  .books {
+    perspective-origin: center bottom;
+  }
+
+  .books .wrapper-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    transform: translateZ(-1000vh) scale(2) translate(0, -60%);
+  }
+
+  .book {
+    position: relative;
+    top: 100px;
+    left: -20vh !important;
+    overflow: visible;
+    transform-origin: center top;
+    transform: scaleX(0.65) rotateY(90deg) rotateX(90deg) translateZ(-100px);
+    margin-bottom: -70vh;
+  }
+
+  #cv-page{
+    padding-left: 0;
+  }
+
+  .book.active {
+    animation: none;
+    top: -15vh;
+    transform: translate(-45%, -5%) scaleX(1) rotateY(0deg) rotateX(0deg) translateZ(900px);
+  }
+  .book-2.active{
+    transform: translate(-45%, -18%) scaleX(1) rotateY(0deg) rotateX(0deg) translateZ(900px);
+
+  }
+  .book-3.active{
+    transform: translate(-45%, -30%) scaleX(1) rotateY(0deg) rotateX(0deg) translateZ(900px);
+
+  }
+
+  .book .face-left .tag {
+    position: absolute;
+    font-size: 2em;
+    width: 80vh;
+    top: 50%;
+    right: 0;
+    transform: translateX(45%) scaleX(-1) scaleY(calc(1 / 0.65)) translateY(350%) rotateZ(90deg);
+    white-space: nowrap;
+  }
+
+  .book:not(.active):hover {
+    transform: scaleX(0.65) rotateY(90deg) rotateX(90deg) translateZ(-100px);
+  }
+
+  .card {
+    position: relative;
+    left: 50%;
+    top: 4em;
+    transform: translate(-50%, 0) translateZ(-100px);
+    opacity: 1;
+    height: unset;
+    width: 75%;
+    text-align: center;
+    transform-style: preserve-3d;
+  }
+  .logo-links{
+    display: inline-block;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  .card .name-title{
+    position: relative;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    top: unset;
+    transform: unset;
+    width: 100%;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+  .card .play-background-animation-button{
+    position: relative;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    top: unset;
+    transform: unset;
+    display: inline-flex;
+    transform: translateZ(200px);
   }
 }

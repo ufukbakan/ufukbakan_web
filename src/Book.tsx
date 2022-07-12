@@ -5,10 +5,13 @@ import { BookContext } from "./App";
 export default function Book(props: BookProps) {
 
     const bookContext = useContext(BookContext);
+    const bookIdClass = "book-"+(props.id+1);
 
     return (
         <div className={
-            classNames("book", { "active": props.active, "prevent-click": props.preventClick })
+            classNames("book " + bookIdClass, {
+                "active": props.active, "prevent-click": props.preventClick,
+            })
         }
             onClick={props.active ? undefined : props.onClick}
             style={

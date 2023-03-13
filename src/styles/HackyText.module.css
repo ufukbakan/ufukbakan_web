@@ -1,0 +1,36 @@
+.glitch {
+    display: inline-block;
+    min-width: .4em;
+    position: relative;
+    text-shadow:
+        0.02em .02em rgba(255, 0, 0, 0.7),
+        -0.02em -.02em rgba(0, 255, 0, 0.7),
+        0.02em -.02em rgba(0, 0, 255, 0.7);
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-char);
+    pointer-events: none;
+    position: absolute; 
+    left: 0;
+    top: 0;
+    animation: glitchAnim 3s steps(3, end) infinite alternate;
+    animation-delay: var(--delay);
+    transform: translateX(3%);
+}
+
+.glitch::after {
+    transform: translateX(-3%);
+    animation-delay: var(--delay2);
+}
+
+@keyframes glitchAnim {
+    0% {
+        clip-path: inset(0 0 50% 0);
+    }
+
+    100% {
+        clip-path: inset(50% 0 0 0);
+    }
+}

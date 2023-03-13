@@ -5,6 +5,7 @@ specifiers:
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   next: 13.2.4
+  precision-timeout-interval: ^4.3.0
   react: 18.2.0
   react-dom: 18.2.0
   typescript: 4.9.5
@@ -14,6 +15,7 @@ dependencies:
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+  precision-timeout-interval: 4.3.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   typescript: 4.9.5
@@ -249,6 +251,10 @@ packages:
       - babel-plugin-macros
     dev: false
 
+  /performance-now/2.1.0:
+    resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
+    dev: false
+
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
     dev: false
@@ -260,6 +266,19 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: false
+
+  /precision-timeout-interval/4.3.0:
+    resolution: {integrity: sha512-jHdtCaVKNtfiOhAMNRquKzpjfsmkbwPtIJmzb2V9FoFNibm8mvx+OizDBnB29XkgGiBlP6ZJtthbLyLDd9Qltw==}
+    dependencies:
+      performance-now: 2.1.0
+      raf: 3.4.1
+    dev: false
+
+  /raf/3.4.1:
+    resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
+    dependencies:
+      performance-now: 2.1.0
     dev: false
 
   /react-dom/18.2.0_react@18.2.0:

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Exo 2';
+    src: url("/fonts/Exo2-VariableFont_wght.ttf");
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5em; 
+}
+
+.nav h1 {
+    font-size: 48pt;
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    /* font-family: monospace; */
+    font-weight: 100;
+}

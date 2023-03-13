@@ -1,6 +1,7 @@
 .glitch {
     display: inline-block;
-    min-width: .4em;
+    white-space: pre;
+    margin-right: .2em;
     position: relative;
     text-shadow:
         0.02em .02em rgba(255, 0, 0, 0.7),
@@ -8,11 +9,15 @@
         0.02em -.02em rgba(0, 0, 255, 0.7);
 }
 
+.glitch:last-child {
+    margin-right: 0;
+}
+
 .glitch::before,
 .glitch::after {
     content: attr(data-char);
     pointer-events: none;
-    position: absolute; 
+    position: absolute;
     left: 0;
     top: 0;
     animation: glitchAnim 3s steps(3, end) infinite alternate;

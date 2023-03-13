@@ -18,7 +18,7 @@ export default function (props: HackyTextProps) {
             const randomText = props.children
                 .split('')
                 .map((ch, indx) => {
-                    const delay1 = Math.random()*-3;
+                    const delay1 = Math.random() * -3;
                     const delay2 = delay1 - 1.5;
                     const style = {
                         "--delay": `${delay1.toFixed(5)}s`,
@@ -43,9 +43,5 @@ export default function (props: HackyTextProps) {
         }
     }, [])
 
-    return (
-        <div>
-            <span>{text}</span>
-        </div>
-    )
+    return text
 }
